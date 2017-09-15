@@ -15,10 +15,14 @@ describe("Contact") do
        expect(word1.definitions).to(eq(["something you sit on"]))
      end
    end
-  #  describe("#id") do
-  #    it("checks that id reader method returns id") do
-  #    end
-  #  end
+   describe("#id") do
+     it("checks that id reader method returns id") do
+       word1 = Word.new({word_name: "chair", definition: "something you sit on" })
+       word2 = Word.new({word_name: "table", definition: "a raised flat surface" })
+       expect(word1.id).to(eq(1))
+       expect(word2.id).to(eq(2))
+     end
+   end
    describe("#definitions=") do
      it("checks that definitions writer method updates definitions") do
        word1 = Word.new({word_name: "chair", definition: "something you sit on" })
@@ -34,15 +38,16 @@ describe("Contact") do
   #    it("checks that find method returns object with given id") do
   #    end
   #  end
-  #  describe(".clear") do
-  #    it("checks that clear method clears the all_words class variable") do
-  #    end
-  #  end
-   describe(".all") do
-     it("checks that this method returns the list of all words currently saved") do
+   describe(".clear") do
+     it("checks that clear method clears the all_words class variable") do
        @@all_words = ["a", "bunch", "of", "junk"]
        Word.clear
        expect(@@all_words).to(eq([]))
      end
    end
+  #  describe(".all") do
+  #    it("checks that this method returns the list of all words currently saved") do
+   #
+  #    end
+  #  end
 end

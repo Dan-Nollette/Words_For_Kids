@@ -15,6 +15,7 @@ class Word
   end
 
   def self.clear
+    @@all_words = []
   end
 
 
