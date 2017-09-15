@@ -1,6 +1,6 @@
 class Word
   @@all_words = []
-  attr_reader :word_name#, :id
+  attr_reader :word_name, :id
   attr_accessor :definitions
   def initialize(attributes)
     @word_name = attributes.fetch(:word_name)
@@ -9,6 +9,7 @@ class Word
   end
 
   def save
+    @@all_words.push(self)
   end
 
   def self.find
@@ -20,6 +21,7 @@ class Word
 
 
   def self.all
+    all_words
   end
 
 end

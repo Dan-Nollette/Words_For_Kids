@@ -18,6 +18,7 @@ describe("Contact") do
    describe("#id") do
      it("checks that id reader method returns id") do
        word1 = Word.new({word_name: "chair", definition: "something you sit on" })
+       word1.save
        word2 = Word.new({word_name: "table", definition: "a raised flat surface" })
        expect(word1.id).to(eq(1))
        expect(word2.id).to(eq(2))
@@ -30,10 +31,14 @@ describe("Contact") do
        expect(word1.definitions).to(eq(["a piece of furninture."]))
      end
    end
-  #  describe("#save") do
-  #    it("checks that save method adds word to class variable all_words") do
-  #    end
-  #  end
+   describe("#save") do
+     it("checks that save method adds word to class variable all_words") do
+       @@all_words = []
+       word1 = Word.new({word_name: "chair", definition: "something you sit on" })
+       word1.save
+       expect(@@all_words).to(eq([word1]))
+     end
+   end
   #  describe(".find") do
   #    it("checks that find method returns object with given id") do
   #    end
