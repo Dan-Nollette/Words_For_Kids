@@ -19,10 +19,13 @@ describe("Contact") do
   #    it("checks that id reader method returns id") do
   #    end
   #  end
-  #  describe("#definitions=") do
-  #    it("checks that definitions writer method updates definitions") do
-  #    end
-  #  end
+   describe("#definitions=") do
+     it("checks that definitions writer method updates definitions") do
+       word1 = Word.new({word_name: "chair", definition: "something you sit on" })
+       word1.definitions = ["a piece of furninture."]
+       expect(word1.definitions).to(eq(["a piece of furninture."]))
+     end
+   end
   #  describe("#save") do
   #    it("checks that save method adds word to class variable all_words") do
   #    end
