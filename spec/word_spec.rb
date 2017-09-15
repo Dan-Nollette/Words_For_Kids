@@ -50,9 +50,13 @@ describe("Contact") do
        expect(@@all_words).to(eq([]))
      end
    end
-  #  describe(".all") do
-  #    it("checks that this method returns the list of all words currently saved") do
-   #
-  #    end
-  #  end
+   describe(".all") do
+     it("checks that this method returns the list of all words currently saved") do
+       word1 = Word.new({word_name: "chair", definition: "something you sit on" })
+       word1.save
+       word2 = Word.new({word_name: "table", definition: "a raised flat surface" })
+       word2.save
+       expect(Word.all).to(eq([word1, word2]))
+     end
+   end
 end

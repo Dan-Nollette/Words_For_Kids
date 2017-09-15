@@ -21,7 +21,7 @@ class Word
 
 
   def self.all
-    all_words
+    @@all_words
   end
 
 end
