@@ -39,10 +39,20 @@ describe("Contact") do
        expect(@@all_words).to(eq([word1]))
      end
    end
-  #  describe(".find") do
-  #    it("checks that find method returns object with given id") do
-  #    end
-  #  end
+   describe(".find") do
+     it("checks that find method returns object with given id") do
+       Word.clear
+       word1 = Word.new({word_name: "chair", definition: "something you sit on" })
+       word1.save
+       word2 = Word.new({word_name: "table", definition: "a raised flat surface" })
+       word2.save
+       word3 = Word.new({word_name: "lamp", definition: "makes light" })
+       word3.save
+       word4 = Word.new({word_name: "couch", definition: "comfy to lie on" })
+       word4.save
+       expect(Word.find(3)).to(eq(word3))
+     end
+   end
    describe(".clear") do
      it("checks that clear method clears the all_words class variable") do
        @@all_words = ["a", "bunch", "of", "junk"]

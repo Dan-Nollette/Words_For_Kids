@@ -12,7 +12,12 @@ class Word
     @@all_words.push(self)
   end
 
-  def self.find
+  def self.find(word_id)
+    @@all_words.each do |word|
+      if word.id == word_id
+        return word
+      end
+    end
   end
 
   def self.clear
