@@ -1,6 +1,5 @@
 require 'rspec'
 require 'word'
-require 'pry'
 
 describe("Contact") do
    describe("#word_name") do
