@@ -9,10 +9,12 @@ describe("Contact") do
        expect(word1.word_name).to(eq("chair"))
      end
    end
-  #  describe("#definitions") do
-  #    it("checks that definitions reader method returns definitions") do
-  #    end
-  #  end
+   describe("#definitions") do
+     it("checks that definitions reader method returns definitions") do
+       word1 = Word.new({word_name: "chair", definition: "something you sit on" })
+       expect(word1.definitions).to(eq(["something you sit on"]))
+     end
+   end
   #  describe("#id") do
   #    it("checks that id reader method returns id") do
   #    end
