@@ -1,5 +1,5 @@
 
-<h2><%= @word.word_name%>'s Page!</h2>
+<h2><%= @word.word_name%>'s page!</h2>
 
 <h4>Word: <%= @word.word_name%></h4>
 <%counter = 0 %>
@@ -7,3 +7,14 @@
   <% counter += 1%>
   <h4>defintion <%= counter.to_s%>: <%= definition %></h4>
 <% end %>
+<br>
+<br>
+<h2>Add a Word</h2>
+<form action='/word_specifics/<%= @word.id%>' method="post">
+  <div class="form-group">
+    <label for="definition">Definition</label>
+    <input id="definition" name="definition" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>
+<a href="/">back to main page</a>

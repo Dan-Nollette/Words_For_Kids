@@ -33,3 +33,10 @@ get('/word_specifics/:id') do
   @word = Word.find(params[:id])
   erb(:word_specifics)
 end
+
+post('/word_specifics/:id') do
+  definition = params["definition"]
+  @word = Word.find(params[:id])
+  @word.definitions = @word.definitions.push(definition)
+  erb(:word_specifics)
+end
