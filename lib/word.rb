@@ -1,7 +1,11 @@
 class Word
   @@all_words = []
-
-  def initialize()
+  #attr_reader :word_name :id
+  #attr_accessor :definitions
+  def initialize(attributes)
+    @word_name = attributes.fetch(:word_name)
+    @definitions = [attributes.fetch(:definition)]
+    @id = @@all_words.length + 1
   end
 
   def save
