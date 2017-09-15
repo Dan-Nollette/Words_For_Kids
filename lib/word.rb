@@ -14,7 +14,7 @@ class Word
 
   def self.find(word_id)
     @@all_words.each do |word|
-      if word.id == word_id
+      if word.id == word_id.to_i
         return word
       end
     end

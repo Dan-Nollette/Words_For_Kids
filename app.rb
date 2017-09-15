@@ -29,7 +29,7 @@ post('/clear') do
   erb(:word_list)
 end
 
-post('/word_specifics/:id') do
+get('/word_specifics/:id') do
   @word = Word.find(params[:id])
   erb(:word_specifics)
 end

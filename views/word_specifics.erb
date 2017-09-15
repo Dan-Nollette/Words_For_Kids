@@ -1,0 +1,9 @@
+
+<h2><%= @word.word_name%>'s Page!</h2>
+
+<h4>Word: <%= @word.word_name%></h4>
+<%counter = 0 %>
+<% @word.definitions.each do |definition| %>
+  <% counter += 1%>
+  <h4>defintion <%= counter.to_s%>: <%= definition %></h4>
+<% end %>
