@@ -38,8 +38,11 @@ describe("Contact") do
   #    it("checks that clear method clears the all_words class variable") do
   #    end
   #  end
-  #  describe(".all") do
-  #    it("checks that this method returns the list of all words currently saved") do
-  #    end
-  #  end
+   describe(".all") do
+     it("checks that this method returns the list of all words currently saved") do
+       @@all_words = ["a", "bunch", "of", "junk"]
+       Word.clear
+       expect(@@all_words).to(eq([]))
+     end
+   end
 end
